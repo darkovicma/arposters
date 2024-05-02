@@ -26,12 +26,9 @@
 
     // Load all videos
     const videoTextures = {
-      video0: loadVideo('video0'),
       video1: loadVideo('video1'),
       video2: loadVideo('video2'),
-      video3: loadVideo('video3'),
-      video4: loadVideo('video4'),
-      video5: loadVideo('video5')
+      video3: loadVideo('video3')
     };
 
     // create a mindar object using threejs
@@ -53,14 +50,9 @@
     };
 
     // Add anchors for each video
-    addAnchor(0, videoTextures.video0, 1, 1);
     addAnchor(0, videoTextures.video1, 1, 1);
-
-    addAnchor(1, videoTextures.video2, 1, 1);
-    addAnchor(1, videoTextures.video3, 1, 1);
-
-    addAnchor(2, videoTextures.video4, 1, 1);
-    addAnchor(2, videoTextures.video5, 1, 1);
+    addAnchor(1, videoTextures.video2, 3, 3);
+    addAnchor(2, videoTextures.video3, 1, 1);
 
     const start = async () => {
       await mindarThree.start();
@@ -97,44 +89,19 @@
       z-index: 2;
     }
 
-    @keyframes bounceAnimation {
-      0% {
-        transform: translateY(0);
-      }
-      50% {
-        transform: translateY(-10px);
-      }
-      100% {
-        transform: translateY(0);
-      }
-    }
-    .bounce-video {
-      animation: bounceAnimation 1s infinite;
-    }
   </style>
 </head>
 
 <body>
 
-  <video id="video0" loop crossOrigin="anonymous" playsinline style="display:none">
-    <source src="./assets/vid-0.webm" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'>
-  </video>
   <video id="video1" loop crossOrigin="anonymous" playsinline style="display:none">
-    <source src="./assets/vid-1.webm" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'>
+    <source src="./assets/vid-2.webm" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'>
   </video>
-
   <video id="video2" loop crossOrigin="anonymous" playsinline style="display:none">
     <source src="./assets/vid-2.webm" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'>
   </video>
-  <video id="video3" class="bounce-video" loop crossOrigin="anonymous" playsinline style="display:none">
-    <source src="./assets/vid-3.webm" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'>
-  </video>
-
-  <video id="video4" loop crossOrigin="anonymous" playsinline style="display:none">
-    <source src="./assets/vid-0.webm" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'>
-  </video>
-  <video id="video5" loop crossOrigin="anonymous" playsinline style="display:none">
-    <source src="./assets/vid-1.webm" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'>
+  <video id="video3" loop crossOrigin="anonymous" playsinline style="display:none">
+    <source src="./assets/vid-2.webm" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'>
   </video>
 
   <div id="control">
