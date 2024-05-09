@@ -48,7 +48,7 @@
     const addAnchor = (markerId, videoTexture, width, height, position) => {
       const anchor = mindarThree.addAnchor(markerId);
       const geometry = new THREE.PlaneGeometry(width, height);
-      const material = new THREE.MeshBasicMaterial({ color: 0xffffff, transparent: true, opacity: 0.85, map: videoTexture });
+      const material = new THREE.MeshBasicMaterial({ color: 0xffffff, transparent: true, opacity: 0.9, map: videoTexture });
 
       const plane = new THREE.Mesh(geometry, material);
       plane.position.set(position.x, position.y, position.z); // Set the position
@@ -64,12 +64,6 @@
       directionalLight.position.set(0, 15, 15);
       directionalLight.castShadow = true; // Enable shadow casting
       scene.add(directionalLight);
-
-      // Set up shadow properties for the light
-      directionalLight.shadow.mapSize.width = 1024; // Shadow map width
-      directionalLight.shadow.mapSize.height = 1024; // Shadow map height
-      directionalLight.shadow.camera.near = 25; // Near shadow frustum
-      directionalLight.shadow.camera.far = 70; // Far shadow frustum
 
     };
 
